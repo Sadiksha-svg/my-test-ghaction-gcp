@@ -3,15 +3,15 @@ provider "google" {
     project = var.project_id
 }
 
-terraform {
-  backend "remote" {
-    organization = "Sadiksha"
-
-    workspaces {
-      name = "test"
-    }
-  }
-}
+#terraform {
+#  backend "remote" {
+#    organization = "Sadiksha"
+#
+#    workspaces {
+#      name = "test"
+#    }
+#  }
+#}
 
 resource "google_storage_bucket" "default" {
   name = var.bucket_name
