@@ -1,3 +1,19 @@
+terraform {
+  required_providers {
+    google = {
+      source  = "hashicorp/google"
+      version = "3.89.0"
+    }
+  }
+  backend "remote" {
+    organization = "Sadiksha"
+
+    workspaces {
+      name = "test"
+    }
+  }
+}
+
 provider "google" {
     #credentials = file("test-gitops-368615-cc9229832eeb.json")
     project = var.project_id
