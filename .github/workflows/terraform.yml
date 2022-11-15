@@ -66,8 +66,10 @@ jobs:
 
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
-      run: terraform init
+      #run: terraform init
       uses: ops18/terraform-github-actions@master
+      with:
+        tf_actions_subcommand: init
       #uses: hashicorp/setup-terraform@v1
       #with:
       #  cli_config_credentials_token: ${{ secrets.GOOGLE_CREDENTIALS }}
@@ -80,8 +82,10 @@ jobs:
 
     # Generates an execution plan for Terraform
     - name: Terraform Plan
-      run: terraform plan
+      #run: terraform plan
       uses: ops18/terraform-github-actions@master
+      with:
+        tf_actions_subcommand: plan
       env:
           GCP_SA_KEY: ${{ secrets.GOOGLE_CREDENTIALS}}
       #uses: hashicorp/setup-terraform@v1
