@@ -80,7 +80,8 @@ jobs:
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
       #run: terraform init
-      uses: ops18/terraform-github-actions@master
+      #uses: ops18/terraform-github-actions@master
+      uses: hashicorp/terraform-github-actions@master
       with:
         tf_actions_version: ${{ env.TERRAFORM_VERSION }}
         tf_actions_comment: "false"
@@ -99,7 +100,8 @@ jobs:
     # Generates an execution plan for Terraform
     - name: Terraform Plan
       #run: terraform plan
-      uses: ops18/terraform-github-actions@master
+      #uses: ops18/terraform-github-actions@master
+      uses: hashicorp/terraform-github-actions@master
       with:
         tf_actions_version: ${{ env.TERRAFORM_VERSION }}
         tf_actions_comment: "false"
