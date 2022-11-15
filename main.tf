@@ -1,5 +1,5 @@
 provider "google" {
-    credentials = file("test-gitops-368615-cc9229832eeb.json")
+    #credentials = file("test-gitops-368615-cc9229832eeb.json")
     project = var.project_id
 }
 
