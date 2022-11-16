@@ -96,7 +96,9 @@ jobs:
       #with:
       #  cli_config_credentials_token: ${{ secrets.GOOGLE_CREDENTIALS }}
       env:
-          GCP_SA_KEY: ${{ secrets.GOOGLE_CREDENTIALS}}
+          GCP_SA_KEY: ${{ secrets.GOOGLE_CREDENTIALS }}
+          cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
+
 
     # Checks that all Terraform configuration files adhere to a canonical format
   #  - name: Terraform Format
@@ -114,6 +116,7 @@ jobs:
         tf_actions_subcommand: plan
       env:
           GCP_SA_KEY: ${{ secrets.GOOGLE_CREDENTIALS}}
+          cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
       #uses: hashicorp/setup-terraform@v1
       #with:
       #  cli_config_credentials_token: ${{ secrets.GOOGLE_CREDENTIALS }}
